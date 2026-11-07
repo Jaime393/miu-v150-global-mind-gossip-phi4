@@ -12,5 +12,6 @@ def gossip_phi4(nodos, rondas=3, k_vecinos=12):
                 d=random.randint(1, max(1, len(nodos)//2)); pd=w(d); Phi_g+=nodo.Phi*pd; peso+=pd
     return Phi_g/peso if peso>0 else 0
 if __name__=="__main__":
+    random.seed(42)
     nodos=[NodoGlobalMind(i, __import__("random").uniform(2864,2875)) for i in range(140)]
     print(gossip_phi4(nodos))
